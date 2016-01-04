@@ -1,0 +1,51 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+import sys
+import codecs
+import re
+import math
+pos_dict = {}
+neg_dict = {}
+reload(sys)  
+ 
+sys.stdout = codecs.getwriter('utf_8')(sys.stdout)
+
+#insert into
+for line in codecs.open("positive.prob","r","euc-jp"):
+  line = line.decode("utf8")
+  line = line.rstrip()
+  lis = line.split("¥t")
+  print lis
+
+print "finn insert positive" 
+
+for line in codecs.open("negative.prob","r","euc-jp"):
+  line = line.rstrip()
+  lis = line.split("\t") 
+  print lis
+
+
+
+print "fin insert negative"
+
+print "==================="
+
+for line in codecs.open("test.txt.chasen","r","euc-jp"):
+  line = line.rstrip('¥r¥n')
+  if line == "EOS":
+   if pos_prob > neg_prob:
+     print "positive"
+   else:
+     print "negative"
+  else:
+    lis = line.split("¥t")
+    print lis
+    if lis[0] in pos_dict:
+      print lis[0]
+    else:
+      print "bb"
+
+    if lis[0] in neg_dict:
+      print "cc"
+    else:
+      print "dd"

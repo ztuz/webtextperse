@@ -1,0 +1,50 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+import sys
+import codecs
+import re
+import math
+pos_dict = {}
+neg_dict = {}
+reload(sys)  
+sys.setdefaultencoding('utf8')
+
+#ディクショナリに単語、値を登録。
+for line in codecs.open("positive.prob","r","euc-jp"):
+  line = line.rstrip()
+  lis = line.split("¥t")
+  pos_dict["lis[0]"] = lis[]
+
+for line in codecs.open("negative.prob","r","euc-jp"):
+  line = line.rstrip()
+  lis = line.split("¥t")
+  neg_dict[XXX] = XXX
+
+#合計値を辞書検索、値をどんどん足していく。
+
+pos_prob = 0
+neg_prob = 0
+
+for line in codecs.open("test.txt.chasen","r","euc-jp"):
+  #データ加工、末尾の削除
+  line = line.rstrip('¥r¥n')
+  if line == "EOS":
+   if pos_prob > neg_prob:
+     print "positive"
+   else:
+     print "negative"
+   pass
+
+  else:
+  #こちらで、一行目chasen,加工データを保持変数。
+    lis = line.split("¥t")
+    print lis
+    if lis[0] in pos_dict:
+      print lis[0]
+    else:
+      print "bb"
+
+    if lis[0] in neg_dict:
+      print "cc"
+    else:
+      print "dd"
